@@ -73,13 +73,16 @@ if(playerSelection.toLowerCase()==="rock"){
 function game(){
 
 
-let player, computer;
+let player=0
+let computer =0;
   
  
     for(let i=1; i<=5; i++){
         const choice=getComputerChoice()
         const result = Round(prompt("Enter your value"), choice);
+        
         if (result==='win'){
+            
             player=player+1;
         }
         else if(result==="lose"){
@@ -87,10 +90,14 @@ let player, computer;
         }
     
     }
+
     if(player>computer){
+        
         return "win"
     }
     else if(player<computer){
+        
+
         return "lose"
     }
   else if(player===computer){
