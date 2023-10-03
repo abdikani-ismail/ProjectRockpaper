@@ -31,10 +31,10 @@ if(playerSelection.toLowerCase()==="rock"){
         return "draw"
     }
     else if(computerSelection==="Scissor"){
-        return "you win! Rocks beats Scissor"
+        return "win"
     }
     else if(computerSelection==="Paper"){
-        return "You lose! Paper beats rock"
+        return "lose"
     }
 }
  else if(playerSelection.toUpperCase()==="SCISSOR"){
@@ -42,21 +42,21 @@ if(playerSelection.toLowerCase()==="rock"){
         return "draw"
     }
     else if(computerSelection==="Paper"){
-        return "You win! Scissor beats Paper"
+        return "win"
     }
     else if(computerSelection==="Rock"){
-        return "You lose! Rock beats Scissor"
+        return "lose"
     }
  }
  else if(playerSelection.toLowerCase()==="paper"){
     if(computerSelection==="Rock"){
-        return "You win! Paper beats rock"
+        return "win"
     }
     else if(computerSelection==="Paper"){
         return "draw"
     }
     else if(computerSelection==="Scissor"){
-        return "You lose! Scissor beats Paper"
+        return "lose"
     }
     else{
         return "Please Enter rock or Paper or Scissor"
@@ -72,12 +72,30 @@ if(playerSelection.toLowerCase()==="rock"){
 
 function game(){
 
+
+let player, computer;
   
  
     for(let i=1; i<=5; i++){
         const choice=getComputerChoice()
-        console.log(Round(prompt("Enter your value"), choice))
-        // console.log(x);
+        const result = Round(prompt("Enter your value"), choice);
+        if (result==='win'){
+            player=player+1;
+        }
+        else if(result==="lose"){
+            computer=computer+1;
+        }
+    
     }
+    if(player>computer){
+        return "win"
+    }
+    else if(player<computer){
+        return "lose"
+    }
+  else if(player===computer){
+    return "draw"
+  }
 }
-game()
+console.log(game())
+
